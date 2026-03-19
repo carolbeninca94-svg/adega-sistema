@@ -1,42 +1,37 @@
-	<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Adega Premium</title>
-
-    <!-- CSS opcional -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <h1 style="color:red;">Adega Premium</h1>
+<h1>Adega Premium</h1>
 
-    <form method="POST">
-        <label>Nome:</label>
-        <input type="text" name="nome"><br><br>
+<form method="POST">
+    <label>Nome:</label>
+    <input type="text" name="nome"><br><br>
 
-        <label>Tipo:</label>
-        <select name="tipo">
-            <option value="Vinho">Vinho</option>
-            <option value="Queijo">Queijo</option>
-            <option value="Couro">Couro</option>
-        </select><br><br>
+    <label>Tipo:</label>
+    <select name="tipo">
+        <option value="Vinho">Vinho</option>
+        <option value="Queijo">Queijo</option>
+        <option value="Couro">Couro</option>
+    </select><br><br>
 
-        <label>Preço:</label>
-        <input type="text" name="preco"><br><br>
+    <label>Preco:</label>
+    <input type="text" name="preco"><br><br>
 
-        <button type="submit">Adicionar</button>
-    </form>
+    <button type="submit">Adicionar</button>
+</form>
 
-    <h2>Produtos</h2>
+<h2>Produtos</h2>
 
-    <ul>
-        {% for produto in produtos %}
-            <li>
-                {{ produto.nome }} - {{ produto.tipo }} - R$ {{ produto.preco }}
-            </li>
-        {% endfor %}
-    </ul>
+<ul>
+{% for produto in produtos %}
+    <li>{{ produto.nome }} - {{ produto.tipo }} - R$ {{ produto.preco }}</li>
+{% endfor %}
+</ul>
 
 </body>
 </html>
