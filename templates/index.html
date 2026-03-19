@@ -1,4 +1,5 @@
 
+
 <form method="POST">
     Nome: <input type="text" name="nome"><br>
     
@@ -9,10 +10,27 @@
         <option value="Couro">Couro</option>
     </select><br>
 
-    Preço: <input type="text" name="preco"><br>
+<!DOCTYPE html>
+ 164299d (Atualizar layout da adega)
 
-    <button type="submit">Adicionar</button>
-</form><h2>Produtos</h2>
+<h1 style="color:red">TESTE NOVO</h1>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Adega Premium</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #4b0f1a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
 <ul>
     {% for produto in produtos %}
@@ -21,3 +39,72 @@
         </li>
     {% endfor %}
 </ul>
+
+        .container {
+            padding: 20px;
+        }
+
+        form input, form select {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            background-color: #7b1e2b;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .produtos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🍷 Adega Premium</h1>
+</header>
+
+<div class="container">
+
+    <form method="POST">
+        <input type="text" name="nome" placeholder="Nome">
+        <select name="tipo">
+            <option>Vinho</option>
+            <option>Queijo</option>
+            <option>Salame</option>
+            <option>Couro</option>
+        </select>
+        <input type="text" name="preco" placeholder="Preço">
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <div class="produtos">
+        {% for p in produtos %}
+        <div class="card">
+            <h3>{{ p.nome }}</h3>
+            <p>{{ p.tipo }}</p>
+            <p>R$ {{ p.preco }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+</body>
+</html>
+164299d (Atualizar layout da adega)
